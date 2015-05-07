@@ -67,7 +67,7 @@ class Recaptcha extends RenderElement {
     $result = static::recaptcha()->verify($recaptcha_response);
     if (!$result['success']) {
       $form_state->setError($element, 'The recaptcha was incorrect.');
-      $error_codes = $result['error_codes'];
+      $error_codes = $result['error-codes'];
       if (in_array('missing-input-secret', $error_codes)) {
         static::logger()->error('The secret parameter is missing.');
       }
