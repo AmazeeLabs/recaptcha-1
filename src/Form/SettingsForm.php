@@ -44,8 +44,8 @@ class SettingsForm extends ConfigFormBase {
     $form['api_keys'] = array(
       '#type' => 'details',
       '#title' => $this->t('API Keys'),
-      '#description' => $this->t("Enter your site and secret keys provided at the <a href=\"!admin\">ReCAPTCHA site administration page</a>",
-        ['!admin' => 'https://www.google.com/recaptcha/admin']),
+      '#description' => $this->t("Enter your site and secret keys provided at the <a href=\":admin\">ReCAPTCHA site administration page</a>",
+        [':admin' => 'https://www.google.com/recaptcha/admin']),
     );
     $form['api_keys']['site_key'] = array(
       '#type' => 'textfield',

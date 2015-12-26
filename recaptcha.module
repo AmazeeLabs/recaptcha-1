@@ -37,8 +37,8 @@ function recaptcha_help($route_name, \Drupal\Core\Routing\RouteMatchInterface $r
   $output = '';
   switch ($route_name) {
     case 'help.page.recaptcha':
-      $output .= "<p>" . t("The ReCAPTCHA module helps prevent spam on your site by using the <a href=\"!recaptcha\">Google ReCaptcha Service</a>.", ['!recaptcha' => 'https://www.google.com/recaptcha/intro/']);
-      $output .= "<p>" . t("You must sign up for an account in order to use this service and configure your site and secret keys on the !settings page.", ['!settings' => Drupal::l("ReCAPTCHA settings page", Url::fromRoute('recaptcha.admin_settings'))]);
+      $output .= "<p>" . t("The ReCAPTCHA module helps prevent spam on your site by using the <a href=\":recaptcha\">Google ReCaptcha Service</a>.", [':recaptcha' => 'https://www.google.com/recaptcha/intro/']);
+      $output .= "<p>" . t("You must sign up for an account in order to use this service and configure your site and secret keys on the <a href=\":settings\">ReCAPTCHA settings page</a>.", [':settings' => Url::fromRoute('recaptcha.admin_settings')->toString()]);
       break;
 
     case 'recaptcha.admin_settings':

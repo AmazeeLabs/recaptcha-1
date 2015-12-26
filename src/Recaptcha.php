@@ -80,7 +80,7 @@ class Recaptcha implements RecaptchaInterface {
             'remoteip' => $client_ip,
           ]
         ]);
-      return $response->json();
+      return json_decode($response->getBody(), TRUE);
     }
     catch (RequestException $e) {
       $this->logger->error('Error requesting recaptcha verification', ['exception' => $e]);
